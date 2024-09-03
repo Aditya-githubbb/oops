@@ -7,9 +7,9 @@ private:
     int mins;
 
 public:
-    TIME() : hrs(0), mins(0) {} \\default
+    TIME() : hrs(0), mins(0) {} //default
 
-    TIME(int h, int m) : hrs(h), mins(m) { \\overloaded
+    TIME(int h, int m) : hrs(h), mins(m) { //overloaded
         if (mins >= 60) {
             hrs += mins / 60;
             mins %= 60;
@@ -19,7 +19,7 @@ public:
         }
     }
 
-    TIME(const TIME &t) : hrs(t.hrs), mins(t.mins) {} \\copy
+    TIME(const TIME &t) : hrs(t.hrs), mins(t.mins) {} //copy
 
     TIME sum(const TIME &t) const {
         int totalMins = (hrs * 60 + mins) + (t.hrs * 60 + t.mins);
