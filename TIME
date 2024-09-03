@@ -7,12 +7,9 @@ private:
     int mins;
 
 public:
-    // Default constructor
-    TIME() : hrs(0), mins(0) {}
+    TIME() : hrs(0), mins(0) {} \\default
 
-    // Parameterized constructor
-    TIME(int h, int m) : hrs(h), mins(m) {
-        // Normalize time in case minutes are more than 59 or hours are more than 23
+    TIME(int h, int m) : hrs(h), mins(m) { \\overloaded
         if (mins >= 60) {
             hrs += mins / 60;
             mins %= 60;
@@ -22,10 +19,8 @@ public:
         }
     }
 
-    // Copy constructor
-    TIME(const TIME &t) : hrs(t.hrs), mins(t.mins) {}
+    TIME(const TIME &t) : hrs(t.hrs), mins(t.mins) {} \\copy
 
-    // Function to add two TIME objects
     TIME sum(const TIME &t) const {
         int totalMins = (hrs * 60 + mins) + (t.hrs * 60 + t.mins);
         int h = totalMins / 60 % 24;
@@ -33,7 +28,6 @@ public:
         return TIME(h, m);
     }
 
-    // Function to display time
     void display() const {
         cout << (hrs < 10 ? "0" : "") << hrs << ":"
              << (mins < 10 ? "0" : "") << mins << endl;
@@ -44,13 +38,11 @@ int main() {
     TIME t1(10, 45);     // 10:45
     TIME t2(2, 30);      // 02:30
 
-    // Display original times
     cout << "Time 1: ";
     t1.display();
     cout << "Time 2: ";
     t2.display();
 
-    // Sum of times
     TIME t3 = t1.sum(t2);
     cout << "Sum of Time 1 and Time 2: ";
     t3.display();
