@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Virtual base class
 class A {
 public:
     A() {
@@ -13,7 +12,6 @@ public:
     }
 };
 
-// Class B inherits virtually from A
 class B : virtual public A {
 public:
     B() {
@@ -25,7 +23,6 @@ public:
     }
 };
 
-// Class C inherits virtually from A
 class C : virtual public A {
 public:
     C() {
@@ -37,7 +34,6 @@ public:
     }
 };
 
-// Class D inherits from both B and C
 class D : public B, public C {
 public:
     D() {
@@ -51,10 +47,10 @@ public:
 
 int main() {
     D obj;
-    obj.showA(); // Function from virtual base class A
-    obj.showB(); // Function from B
-    obj.showC(); // Function from C
-    obj.showD(); // Function from D
+    obj.showA(); 
+    obj.showB(); 
+    obj.showC(); 
+    obj.showD(); 
 
     return 0;
 }
